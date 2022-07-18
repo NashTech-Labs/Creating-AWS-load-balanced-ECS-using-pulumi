@@ -3,6 +3,10 @@ Pulumi is an open source infrastructure as code tool for creating, deploying, an
 ```
 $ curl -fsSL https://get.pulumi.com | sh
 ```
+### Installing its modules:
+`$ pip install pulumi_aws`
+
+`$ pip install pulumi_awsx`
 
 ### Creating a Load Balanced ECS Service
 To run a Docker container in ECS using default network and cluster settings, use the awsx.ecs.FargateService class. Since we need to access this container over port 80 using a stable address, we will use a load balancer.
@@ -21,4 +25,4 @@ service = awsx.ecs.FargateService("<service_name>",image="<image_name>")
 ```
 $ pulumi up
 ```
-It will create all the resources that are needed.
+It will create all the resources that are needed. Now you can access your web server using your load balancer.
